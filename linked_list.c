@@ -39,6 +39,8 @@ int main()
 	int key;
 	headNode* headnode=NULL;
 
+	printf("[----- [김상수] [2018038078] -----]");
+
 	do{
 		printf("----------------------------------------------------------------\n");
 		printf("                     Singly Linked List                         \n");
