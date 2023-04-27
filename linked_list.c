@@ -345,7 +345,36 @@ int deleteLast(headNode* h) {
 	return 0;
 }
 
+/**
+ * @brief 
+ * 
+ * 연결리스트를 뒤집는 코드이다
+ * 
+ * 1. 연결리스트가 비어있다면 작업할 수 없다고 출력해준다.
+ * 2. 뒤집힌 연결리스트를 가리킬 middle, 현재 노드를 가리킬 N 이전 노드를 가리킬 trail을 만들어준다.
+ * 3. 현재 노드를 이전 노드의 이전에 넣으면서 Middle을 만들어준다.
+ * 4. h가 가리키는 연결리스트를 Middle로 바꿔준다.
+ * 
+ * @param h 
+ * @return int 
+ */
 int invertList(headNode* h) {
+	if(h->first == NULL) {
+		printf("nothing to invert...\n");
+		return 0;
+	}
+	listNode *n = h->first;
+	listNode *trail = NULL;
+	listNode *middle = NULL;
+
+	while(n != NULL){
+		trail = middle;
+		middle = n;
+		n = n->link;
+		middle->link = trail;
+	}
+
+	h->first = middle;
 
 	return 0;
 }
